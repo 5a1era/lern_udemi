@@ -1,0 +1,16 @@
+.numbers-of-calendar {
+    display: flex;
+    align-content:space-between;
+    flex-wrap: wrap;
+    width: 350px;
+    height: auto;
+    background-color: #f0fd5a;
+}
+
+.number {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #ddd;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="theme">Select a theme</label>
+    <select name="theme" id="theme">
+        <option value="">Make a choice</option>
+        <option value="black">black</option>
+        <option value="white">white</option>
+    </select>
+
+    <h1>This my web-site</h1>
+    <script>
+        const select = document.querySelector('select');
+        const body = document.querySelector('body');
+        body.style.padding = '10px';
+
+        function update(bgColor, textColor){
+            body.style.backgroundColor = bgColor;
+            body.style.color = textColor;
+        }
+
+        select.onchange = function() {
+            
+            (select.value === 'black') ? update('black', 'white') : update('white', 'black');
+        }
+
+
+    </script>
+</body>
+</html>

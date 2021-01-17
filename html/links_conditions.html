@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="examplesConditions">Select a project</label>
+    <select name="links" id="links">
+        <option value="">Make a choice</option>
+        <option value="switch">Switch</option>
+        <option value="tenary_operator">Tenary operator</option>
+        <option value="calendar">Calendar</option>
+    </select>
+    <iframe src="" name="page_project" id="page_project" title="page project"
+        style="width: 900px; height: 600px;"></iframe>
+    <script>
+        const select = document.getElementById('links');
+        const iframe = document.getElementById('page_project');
+        select.addEventListener('change', getProjectPage);
+
+        function getProjectPage() {
+            const link = select.value;
+
+            switch (link) {
+                case 'switch':
+                    iframe.src = '/examples_udemi/html/switch.html';
+                    break;
+                case 'tenary_operator':
+                    iframe.src = '/examples_udemi/html/tenary_operator.html';
+                    break;
+                case 'calendar':
+                    iframe.src = '/examples_udemi/html/calendar.html';
+                    break;
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
