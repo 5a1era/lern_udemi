@@ -1,16 +1,30 @@
 .numbers-of-calendar {
+    
+    width: 500px;
+    height: auto;
+    background-color: #f0fd5a;
+    
+}
+
+ul {
     display: flex;
     align-content:space-between;
     flex-wrap: wrap;
-    width: 350px;
-    height: auto;
-    background-color: #f0fd5a;
+    list-style-type: none;
 }
 
-.number {
+li {
     width: 25px;
     height: 25px;
     padding: 10px;
     margin: 10px;
-    background-color: #ddd;
+    font-weight: bold;
+    font-size: large;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+h1 {
+    text-transform: capitalize;
+    padding: 15px;
 }

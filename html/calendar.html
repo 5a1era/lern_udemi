@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/examples_udemi/css/calendar_style.css">
     <title>Document</title>
 </head>
+
 <body>
     <label for="calendar">Select a month: </label>
     <select name="month" id="month">
@@ -24,39 +26,40 @@
     </select>
 
     <div class="numbers-of-calendar">
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
-        <div class="number">10</div>
-        <div class="number">11</div>
-        <div class="number">12</div>
-        <div class="number">13</div>
-        <div class="number">14</div>
-        <div class="number">15</div>
-        <div class="number">16</div>
-        <div class="number">17</div>
-        <div class="number">18</div>
-        <div class="number">19</div>
-        <div class="number">20</div>
-        <div class="number">21</div>
-        <div class="number">22</div>
-        <div class="number">23</div>
-        <div class="number">24</div>
-        <div class="number">25</div>
-        <div class="number">26</div>
-        <div class="number">27</div>
-        <div class="number">28</div>
-        <div class="number">29</div>
-        <div class="number">30</div>
-        <div id="thirty_one" class="number">31</div>
+        <h1></h1>
+        <ul class="list">
+
+        </ul>
     </div>
     <!-- /.numbers-of-calendar -->
+    <script>
+        const select = document.querySelector('select');
+        const list = document.querySelector('ul');
+        const h1 = document.querySelector('h1');
+        
+        
 
+        select.onchange = function () {
+            let choice = select.value;
+            let days = +31;
+            if (choice === 'april' || choice === 'june' ||
+                choice === 'september' || choice === 'november') {
+                days = +30;
+            } else if (choice === 'february') {
+                days = +28;
+            }
+            createCalendar(days, choice);
+        }
+
+        function createCalendar(days, choice) {
+            list.innerHTML = '';
+            h1.textContent = choice;
+            for (let i = +1; i <= days; i++){
+                const listItem = document.createElement('li');
+                listItem.textContent = i;
+                list.appendChild(listItem);
+            }
+        }
+        createCalendar(31, 'january');
+    </script>
 </body>
-</html>
